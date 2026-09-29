@@ -23,8 +23,8 @@ def _get_ingestion_id() -> str:
 
 
 def main() -> None:
-    secret_scope = os.environ["ENTSOE_SECRET_SCOPE"]
-    secret_key = os.environ["ENTSOE_SECRET_KEY"]
+    secret_scope = os.environ.get("ENTSOE_SECRET_SCOPE", "energy-demand")
+    secret_key = os.environ.get("ENTSOE_SECRET_KEY", "entsoe-token")
     api_token = dbutils.secrets.get(scope=secret_scope, key=secret_key)
     table_name = os.environ.get("BRONZE_TABLE", BRONZE_TABLE)
 

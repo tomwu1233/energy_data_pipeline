@@ -44,6 +44,6 @@ The recommended schedule is hourly. Each run requests the rolling 24 hours endin
 Install the dependencies and run:
 
 ```text
-pip install -r requirements.txt
-pytest
+uv sync
+uv run pytest
 ```
